@@ -116,7 +116,6 @@ function sumatoriaIndefinida(a, b, ...restoDatos){
 }
 console.log("sumar varios numeros = " +sumatoriaIndefinida(2,3,5,10,11) );
 
-
 /*
 Funcion recursiva
 funcion que se llama a si misma
@@ -144,3 +143,58 @@ console.log("Factoria de 3 = " + factoriaConCicloFor(3) ); //6
 console.log("Factoria de 5 = " + factoriaConCicloFor(5) ); //120
 console.log("Factoria de 3 = " + factoriaConRecursion(3) ); //6
 console.log("Factoria de 5 = " + factoriaConRecursion(5) ); //120
+
+// Hacer una recursión que muestre en consola un saludo como
+/*
+saludo  1
+saludo  2
+saludo  3
+
+saludo(10);
+*/
+
+//mi manera
+function saludo( a ){
+    if(a <= 0 || a < 10 , a++) return "saludo " + a;
+    return a * saludo( a - 90 )
+}
+
+
+console.log("saludo  " + saludo(0) ); //6
+console.log("saludo " + saludo(1) ); //120
+console.log("saludo " + saludo(2) ); //6
+console.log("saludo " + saludo(3) ); //120
+console.log("saludo  " + saludo(4) ); //6
+console.log("saludo " + saludo(5) ); //120
+console.log("saludo " + saludo(6) ); //6
+console.log("saludo " + saludo(7) ); //120
+console.log("saludo " + saludo(8) ); //6
+console.log("saludo " + saludo(9) ); //120
+
+
+//otra manera CORRECTA
+function saludo( a ){
+    if( a <= 10)
+     return console.log("saludo " + a);
+    return a * saludo( + a )
+}
+
+console.log("saludo  " + saludo(1) ); 
+onsole.log("saludo " + saludo(2) ); 
+console.log("saludo " + saludo(3) ); 
+onsole.log("saludo " + saludo(4) ); 
+console.log("saludo  " + saludo(5) );
+console.log("saludo " + saludo(6) ); 
+console.log("saludo " + saludo(7) ); 
+onsole.log("saludo " + saludo(8) ); 
+console.log("saludo " + saludo(9) ); 
+onsole.log("saludo " + saludo(10) ); 
+
+//Respuesta de serg
+function saludo( cantidad, iteracion=1 ){
+    console.log("saludo" + iteracion);
+    if(iteracion >= cantidad)
+    return 1;
+    return saludo( cantidad, iteracion+1 );
+} 
+saludo(10);
